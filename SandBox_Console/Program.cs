@@ -4,10 +4,11 @@ namespace SandBox_Console
 {
     internal class Program
     {
-        static int[] memo = new int[100];
-
         static void Main(string[] args)
         {
+            string[] a = new string[10];
+            a[0] = "test";
+
             memo[1] = 1;
             memo[2] = 1;
 
@@ -15,6 +16,7 @@ namespace SandBox_Console
             Console.WriteLine(i);
         }
 
+        static int[] memo = new int[100];
         static int Fibo(int n)
         {
             if(memo[n] != 0)
