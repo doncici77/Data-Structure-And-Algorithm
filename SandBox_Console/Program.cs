@@ -4,18 +4,38 @@ namespace SandBox_Console
 {
     internal class Program
     {
+        static int[] memo = new int[100];
+
         static void Main(string[] args)
         {
-            for (int i = 0; i < 5; i++)
+            memo[1] = 1;
+            memo[2] = 1;
+
+            int i = Fibo(40);
+            Console.WriteLine(i);
+        }
+
+        static int Fibo(int n)
+        {
+            if(memo[n] != 0)
             {
-                for(int j = 0; j < i + 1; j++)
-                {
-                    Console.Write('*');
-                }
-                Console.WriteLine();
+                return memo[n];
             }
 
-            A(1);
+            memo[n] = Fibo(n - 2) + Fibo(n - 1);
+            return memo[n];
+        }
+
+        static void Test(int num)
+        {
+            if(num < 0)
+            {
+                return;
+            }
+
+            Test(num - 1);
+
+            Console.WriteLine(num);
         }
 
         static void A(int num)
