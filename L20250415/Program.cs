@@ -101,6 +101,9 @@ namespace L20250415
             }
             #endregion
 
+            Queue<int> visited = new Queue<int>();
+            visited.Peek();
+
             Console.WriteLine("---------------");
             Console.WriteLine("너비 우선 탐색");
 
